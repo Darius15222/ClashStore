@@ -1,0 +1,212 @@
+<div class="d-flex flex-row container-sm rounded-5 pb-5 text-center">
+    <div class="mx-auto">
+        <h1 style="font-size: 5rem;">Pass</h1>
+    </div>
+</div>
+
+
+
+<div class="d-flex flex-row container-sm">
+    <div class="row">
+        <div class="col-xl-6" *ngFor="let p of pass">
+            <div style="width: 90%" class="d-flex flex-column container-sm shadow p-3 mb-5 bg-body-tertiary rounded-5 pb-5 pt-5">
+                
+                <div class="row">
+                    <div style="position: relative;">
+                        <img src="{{p.backgroundImage}}" alt="{{p.name}}" class="rounded-5" style="display: block; width: 100%;">
+                        <img src="{{p.image}}" alt="Overlay Image" class="img-fluid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20vw; height: 15vw;">
+                      </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="text-center pt-4">
+                            <p class="fs-3 fw-medium pt-3">{{p.name}}</p>
+                            <p class="fs-5">{{p.description}}</p>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="text-center pt-5">
+                            <button class="btn btn-primary bg-dark rounded-5" (click)="addToCart(p.name, p.image, p.price)">
+                                <div class="text-white p-3 fs-6 fw-medium">{{p.price}}</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div *ngIf="alert == true; then ifBlock"></div>
+                        <ng-template #ifBlock>
+                            <div id="alerta" class="alert alert-danger" role="alert">
+                                Nu se poate plasa o comanda daca nu sunteti conectat!
+                            </div>
+                        </ng-template>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row container-sm rounded-5 pb-5 text-center">
+        <div class="mx-auto">
+            <h1 style="font-size: 5rem;">Gems</h1>
+        </div>
+    </div>
+
+<div class="d-flex flex-row container-sm">
+<div class="row">
+    <div class="col-xl-6" *ngFor="let g of gems">
+        <div style="width: 90%" class="d-flex flex-column container-sm shadow p-3 mb-5 bg-body-tertiary rounded-5 pb-5 pt-5">
+            
+            <div class="row">
+                <div style="position: relative;">
+                    <img src="{{g.backgroundImage}}" alt="{{g.name}}" class="rounded-5" style="display: block; width: 100%;">
+                    <img src="{{g.image}}" alt="Overlay Image" class="img-fluid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 15vw; height: 10vw;">
+                  </div>
+            </div>
+
+                  <div class="row">
+
+                      <div class="col text-center">
+                        <div class="text-center pt-4">
+                          <p class="fs-3 fw-medium pt-3">{{g.name}}</p>
+                        </div>
+                        <div class="text-center d-flex align-items-center justify-content-center">
+                          <img src="{{gemImg}}" alt="gem" class="mb-4 me-1" style="width: 1.75rem;">
+                          <p class="fs-5">{{g.amount}}</p>
+                        </div>
+                      </div>
+                    
+                    <div class="col text-center">
+                        <div class="text-center pt-5">
+                            <button class="btn btn-primary bg-dark rounded-5" (click)="addToCart(g.name, g.image, g.price)">
+                                <div class="text-white p-3 fs-6 fw-medium">{{g.price}}</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            <div *ngIf="alert == true; then ifBlock"></div>
+                    <ng-template #ifBlock>
+                        <div id="alerta" class="alert alert-danger" role="alert">
+                            Nu se poate plasa o comanda daca nu sunteti conectat!
+                        </div>
+                    </ng-template>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="d-flex flex-row container-sm rounded-5 pb-5 text-center">
+    <div class="mx-auto">
+        <h1 style="font-size: 5rem;">Merch</h1>
+    </div>
+</div>
+
+<div class="d-flex flex-row container-sm">
+    <div class="row">
+        <div class="col-xl-6" *ngFor="let m of merch">
+            <div style="width: 90%" class="d-flex flex-column container-sm shadow p-3 mb-5 bg-body-tertiary rounded-5 pb-5 pt-5">
+                
+                <div class="row">
+                    <div style="position: relative;">
+                        <img src="{{m.image}}" alt="{{m.description}}" class="rounded-5 img-fluid" style="display: block; width: 50rem; height: 40rem;">
+                      </div>
+                </div>
+                    
+
+                <div class="row pb-5">
+                    <div class="col-md-6 text-center pt-3">
+                      <p class="fs-3 fw-medium pt-3">{{m.description}}</p>
+                    </div>
+                    <div class="col-md-6 text-center pt-4">
+                      <button class="btn btn-primary bg-dark rounded-5" (click)="addToCart(m.description, m.image, m.price)">
+                        <div class="text-white p-3 fs-6 fw-medium">{{m.price}}</div>
+                      </button>
+                    </div>
+                  </div>
+
+                <!-- <div class="text-center pt-4">
+                        <p class="fs-3 fw-medium pt-3">{{m.description}}</p>
+                    </div>
+                      <div class="col text-center pt-4">
+                        <button class="btn btn-primary bg-dark rounded-5" (click)="addToCart(m.description, m.image, m.price)">
+                            <div class="text-white p-3 fs-6 fw-medium">   
+                                {{m.price}}
+                            </div> 
+                        </button>
+                      </div> -->
+    
+                <div *ngIf="alert == true; then ifBlock"></div>
+                        <ng-template #ifBlock>
+                            <div id="alerta" class="alert alert-danger" role="alert">
+                                Nu se poate plasa o comanda daca nu sunteti conectat!
+                            </div>
+                        </ng-template>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+<!-- <div class="d-flex flex-row container-sm ">
+    <div *ngFor="let g of gems; index as i;">
+        <div style="width: 90%" class="d-flex flex-column container-sm shadow p-3 mb-5 bg-body-tertiary rounded-5 pb-5 pt-5">
+            
+            <div class="row">
+                <div style="position: relative;">
+                    <img src="{{g.backgroundImage}}" alt="Background Image" style="display: block; width: 100%;">
+                    <img src="{{g.image}}" alt="Overlay Image" class="img-fluid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20vw; height: 15vw;">
+                  </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                  <div class="col ps-5">
+
+                    <p class="fs-3 fw-medium pt-3">{{g.name}}</p>
+                    <p class="fs-5">{{g.amount}}</p>
+
+                  </div>
+                  <div class="col text-center pt-4">
+                    <button class="btn btn-primary bg-dark rounded-5" (click)="addToCart(g.name, g.image, g.price)">
+                        <div class="text-white p-3 fs-6 fw-medium">   
+                            {{g.price}}
+                        </div> 
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            <div *ngIf="alert == true; then ifBlock"></div>
+                    <ng-template #ifBlock>
+                        <div id="alerta" class="alert alert-danger" role="alert">
+                            Nu se poate plasa o comanda daca nu sunteti conectat!
+                        </div>
+                    </ng-template>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="itemsContainer">
+    <div class="item" *ngFor="let m of merch; index as i;">
+        <img class="imagine" src="{{m.image}}" alt="imagine">
+        <p class="pret">{{m.name}}</p>
+        <br>
+        <p class="pret">{{m.price}}</p>
+        <br>
+        <button (click)="addToCart(m.name, m.image, m.price)">ADAUGA IN COS</button>
+
+        <div *ngIf="alert == true; then ifBlock"></div>
+
+        <ng-template #ifBlock>
+            <div id="alerta" class="alert alert-danger" role="alert">
+                Nu se poate plasa o comanda daca nu sunteti conectat!
+            </div>
+        </ng-template>
+    </div>
+</div> -->

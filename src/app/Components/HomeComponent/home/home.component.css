@@ -1,0 +1,12 @@
+.imageContainer
+{
+    display: block;
+    margin: 5% 10%;
+}
+
+.imgStyle
+{
+    align-self: center;
+    box-sizing: border-box;
+    width: 100%;
+}

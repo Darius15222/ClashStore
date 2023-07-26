@@ -1,0 +1,43 @@
+<div *ngIf="!accountService.getConectat(); then ifBlock else elseBlock"></div>
+
+<ng-template #ifBlock>
+  <div class="container-sm p-3 mb-5 rounded-5 pb-5 pt-5">
+    <form style="padding-top: 10em;" class="example-form">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="email" name="email" type="email" matInput [formControl]="emailFormControl" 
+                 placeholder="Ex. pat@example.com" style="width: 250%;">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address!
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>!
+          </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" style="width: 20rem;">
+            <mat-label>Parolă</mat-label>
+            <input [(ngModel)]="password" name="password" matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+    </form>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" (click)="signIn()" routerLink="../" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-light">Conecteaza-te</button>
+      <button type="button" routerLink="../create-account" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-light">Creeaza Cont</button>
+      
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #elseBlock>
+  <div style="padding-bottom: 31.5rem;">
+
+  </div>
+    <!-- <button (click)="signOut()" >Deconecteaza-te fra</button>
+    <div>E conectat cu contul {{ accountService.getEmail() }}</div> -->
+</ng-template>
+
+<footer></footer>

@@ -1,0 +1,53 @@
+/* .itemsContainer
+{
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+
+    display: grid;
+    grid-template-areas:
+        "gamebadge textcontent"
+        "gamebadge appstores";
+
+    grid-template-columns: 1fr 2fr;
+    column-gap: 3em;
+    
+    border-radius: 1em;
+    margin: 5% 10%;
+    padding: 2% 0;
+    position: relative;
+
+    background: #fff;
+    box-shadow: 0 12px 16px rgba(80,51,5,.08), 0 -2px 12px rgba(80,51,5,.05);
+}
+
+.itemContainer
+{
+    display: flex;
+    box-shadow: #191919;
+
+}
+
+.imagine{
+    padding: 0 10em;
+    width: 100%;
+    height: auto;
+}
+
+.pret{
+    margin: 0 15em;
+} */
+
+.imageContainer
+{
+    display: block;
+    margin: 5% 10%;
+}
+
+
+.imgStyle
+{
+    align-self: center;
+    box-sizing: border-box;
+    width: 100%;
+}

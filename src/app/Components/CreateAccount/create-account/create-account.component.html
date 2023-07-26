@@ -1,0 +1,37 @@
+<div class="container-sm p-3 mb-5 rounded-5 pb-5 pt-5">
+  <form style="padding-top: 10em;" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+
+      <input [(ngModel)]="email" name="email" type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address!
+      </mat-error>
+
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>!
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="example-form">
+        
+        <mat-label>Parolă</mat-label>
+
+        <input [(ngModel)]="password" name="password" matInput [type]="hide ? 'password' : 'text'">
+
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+
+    </mat-form-field>
+
+</form>
+  <div class="d-flex justify-content-center">
+    <button type="button" routerLink="../login" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-light">Conecteaza-te</button>
+    <button type="button" (click)="createAccount()" class="btn btn-light">Creeaza Cont</button>
+  </div>
+</div>
+
+<footer></footer>

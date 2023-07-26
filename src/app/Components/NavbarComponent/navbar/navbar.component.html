@@ -1,0 +1,56 @@
+<!-- <a mat-button routerLink="create-account" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary bg-dark rounded-5" style="margin-left: 5%;">
+                    <div class="loginText" >Create Account</div>
+                </a> -->
+
+                <div class="text-center pt-3 pb-3 shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <span class="fs-4 fw-medium">
+                                RFTW Store
+                            </span>
+                        </div>
+                
+                        <div class="col">
+                            <a mat-button routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+                                <div class="fs-5 text-secondary">Home</div>
+                            </a>
+                            <a mat-button routerLink="clash-of-clans" routerLinkActive="active" ariaCurrentWhenActive="page">
+                                <div class="fs-5 text-secondary">Clash Of Clans</div>
+                            </a>
+                            <a mat-button routerLink="clash-royale" routerLinkActive="active" ariaCurrentWhenActive="page">
+                                <div class="fs-5 text-secondary">Clash Royale</div>
+                            </a>
+                        </div>
+                
+                        <div class="col-sm-3">
+                            <div *ngIf="!accountService.getConectat(); then ifBlock else elseBlock"></div>
+                            
+                            <ng-template #ifBlock>
+                
+                                <a mat-button routerLink="login" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary bg-dark rounded-5">
+                                    <div class="text-white p-3 fs-6 fw-medium">
+                                        Log In
+                                    </div>
+                                </a>
+                
+                            </ng-template>
+                            
+                            <ng-template #elseBlock>
+                
+                                <a mat-button routerLink="login" (click)="signOut()" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary bg-dark rounded-5">
+                                    <div class="text-white p-3 fs-6 fw-medium">
+                                        Log Out
+                                    </div>
+                                </a>
+                
+                                <a mat-button routerLink="cart" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary bg-dark rounded-5" style="margin-left: 5%;">
+                                    <div class="text-white p-3 fs-6 fw-medium">
+                                        Cart
+                                    </div>
+                                </a>
+                
+                            </ng-template>
+                        </div>
+                        
+                    </div>
+                </div>
